@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"
+        integrity="sha512-d6sc8kbZEtA2LwB9m/ck0FhvyUwVfdmvTeyJRprmj7Wg9wRFtHDIpr6qk4g/y3Ix3O9I6KHIv6SGu9f7RaP1Gw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+    <script>
+        function setup() {
+            createCanvas(800, 800);
+        }
+
+        function draw() {
+            background(0);
+        translate(400,height)
+        let len = 100
+        
+        branch(len)
+
+        }
+        
+        function branch(len){
+            let angle = PI/12
+            stroke(255)
+            line(0,0,0,-len)
+            translate(0,-len)
+            if(len > 20){
+                if(len <=100 && len >80){
+                strokeWeight(3)
+                }else{
+                    strokeWeight(1)
+                }
+                push()
+                rotate(angle)
+                branch(len*6/7)
+                translate(0,-len)
+                pop()
+                push()
+                rotate(-angle)
+                branch(len*6/7)
+                pop()
+
+            }
+            
+        }
+</script>
+</body>
+
+</html>
